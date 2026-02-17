@@ -1,14 +1,14 @@
 const trimTrailingSlash = (value: string) => value.replace(/\/+$/, "");
 
 export const SITE_URL = trimTrailingSlash(
-  import.meta.env.PUBLIC_SITE_URL ?? "https://kafadar.app",
+  import.meta.env.PUBLIC_SITE_URL ?? "https://kafadar-web.vercel.app",
 );
 
 export const SUPPORT_EMAIL =
-  import.meta.env.PUBLIC_SUPPORT_EMAIL ?? "kafadar.app@gmail.com";
+  import.meta.env.PUBLIC_SUPPORT_EMAIL ?? "kafadar.mobile@gmail.com";
 
 export const ANDROID_PACKAGE =
-  import.meta.env.PUBLIC_ANDROID_PACKAGE ?? "com.kafadar.app";
+  import.meta.env.PUBLIC_ANDROID_PACKAGE ?? "com.schwerttr.kafadar";
 
 export const GOOGLE_PLAY_URL =
   import.meta.env.PUBLIC_GOOGLE_PLAY_URL ??
@@ -35,7 +35,7 @@ export const LEGACY_DEEP_LINK_PREFIX =
   "https://goldsword.dev/kafadar/q/";
 
 export const IOS_BUNDLE_ID =
-  import.meta.env.PUBLIC_IOS_BUNDLE_ID ?? "com.kafadar.app";
+  import.meta.env.PUBLIC_IOS_BUNDLE_ID ?? "com.schwerttr.kafadar";
 
 export const APPLE_TEAM_ID =
   import.meta.env.PUBLIC_APPLE_TEAM_ID ?? "TEAM_ID_REQUIRED";

@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://kafadar.app",
+  site: "https://kafadar-web.vercel.app",
   integrations: [
     react(),
     tailwind({

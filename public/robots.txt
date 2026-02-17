@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kafadar.app/sitemap-index.xml
+Sitemap: https://kafadar-web.vercel.app/sitemap-index.xml
