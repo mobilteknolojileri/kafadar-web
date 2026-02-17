@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    title="Sayfa Bulunamadı - Kafadar"
+    description="Aradığınız sayfa bulunamadı."
+    noindex={true}
+>
+    <main class="min-h-screen flex items-center justify-center px-4">
+        <div
+            class="w-full max-w-xl bg-white rounded-3xl border border-gray-100 shadow-xl p-8 text-center"
+        >
+            <h1 class="text-4xl font-bold text-gray-900 mb-3">404</h1>
+            <p class="text-gray-600 mb-5">
+                Sayfa bulunamadı. Eğer bir quiz bağlantısı açtıysanız otomatik olarak
+                deep-link sayfasına yönlendirileceksiniz.
+            </p>
+            <a
+                href="/"
+                class="inline-flex items-center justify-center rounded-xl bg-primary-600 px-5 py-3 text-white font-semibold hover:bg-primary-700 transition-colors"
+            >
+                Ana Sayfaya Dön
+            </a>
+        </div>
+    </main>
+    <script>
+        const path = window.location.pathname;
+        const deepLinkMatch = path.match(
+            /^\/(?:kafadar\/)?(?:q|quiz)\/([^/?#]+)/i,
+        );
+
+        if (deepLinkMatch?.[1]) {
+            const slug = encodeURIComponent(deepLinkMatch[1]);
+            window.location.replace(`/deeplink?slug=${slug}&path=${encodeURIComponent(path)}`);
+        }
+    </script>
+</BaseLayout>
