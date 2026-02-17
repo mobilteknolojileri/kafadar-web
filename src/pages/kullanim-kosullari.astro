@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SUPPORT_EMAIL } from "../config/site";
+---
+
+<BaseLayout
+    title="Kullanım Koşulları - Kafadar"
+    description="Kafadar uygulaması kullanım koşulları."
+>
+    <main class="max-w-4xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-gray-900 mb-2">Kullanım Koşulları</h1>
+        <p class="text-sm text-gray-500 mb-10">Son güncelleme: 17 Şubat 2026</p>
+
+        <article class="space-y-8 text-gray-700 leading-7">
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">1. Kabul</h2>
+                <p>
+                    Uygulamayı indirerek veya kullanarak bu koşulları kabul etmiş
+                    olursunuz.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    2. Uygunluk ve Hesap
+                </h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Hizmet 13 yaş ve üzeri kullanıcılar için tasarlanmıştır.</li>
+                    <li>
+                        Hesap bilgilerinizin güvenliğinden ve hesabınız altındaki
+                        faaliyetlerden siz sorumlusunuz.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    3. Kullanıcı İçeriği
+                </h2>
+                <p>
+                    Oluşturduğunuz içeriklerin sorumluluğu size aittir. Yasa dışı,
+                    zararlı, taciz edici veya üçüncü kişi haklarını ihlal eden içerikler
+                    yasaktır.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    4. Yasaklı Kullanımlar
+                </h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Hizmete izinsiz erişim denemesi veya güvenlik ihlali.</li>
+                    <li>Spam, kötü amaçlı yazılım, dolandırıcılık veya taklit davranış.</li>
+                    <li>
+                        Başkalarının kişisel verilerini hukuka aykırı şekilde paylaşma.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    5. Fikri Mülkiyet
+                </h2>
+                <p>
+                    Uygulamanın yazılımı, markası, tasarımı ve kullanıcı harici içeriği
+                    Kafadar'a aittir ve ilgili mevzuatla korunur.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    6. Üçüncü Taraf Hizmetler
+                </h2>
+                <p>
+                    Uygulama; uygulama mağazaları, altyapı veya reklam sağlayıcıları gibi
+                    üçüncü taraf hizmetlerle çalışabilir. Bu servislerin kendi koşulları
+                    geçerlidir.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    7. Hizmette Değişiklik ve Sonlandırma
+                </h2>
+                <p>
+                    Hizmeti güncelleme, askıya alma veya sonlandırma hakkımız saklıdır.
+                    Kurallara aykırı davranış halinde hesabı kısıtlayabilir veya
+                    sonlandırabiliriz.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    8. Sorumluluk Sınırı
+                </h2>
+                <p>
+                    Hizmet "olduğu gibi" sunulur. Zorunlu yasal sınırlar dışında dolaylı
+                    veya sonuçsal zararlardan sorumluluk kabul edilmez.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    9. Koşullarda Değişiklik
+                </h2>
+                <p>
+                    Bu koşullar güncellenebilir. Önemli değişikliklerde güncel tarih bu
+                    sayfada belirtilir.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">10. İletişim</h2>
+                <p>
+                    Sorularınız için:
+                    <a
+                        class="text-primary-600 hover:underline"
+                        href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a
+                    >
+                </p>
+            </section>
+        </article>
+    </main>
+</BaseLayout>

@@ -1,0 +1,165 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SUPPORT_EMAIL } from "../../config/site";
+---
+
+<BaseLayout
+    title="Privacy Policy - Kafadar"
+    description="Global privacy policy for Kafadar (GDPR, CCPA/CPRA, LGPD, KVKK aligned)."
+>
+    <main class="max-w-4xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
+        <p class="text-sm text-gray-500 mb-10">Last updated: February 17, 2026</p>
+
+        <article class="space-y-8 text-gray-700 leading-7">
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">1. Data Controller</h2>
+                <p>
+                    Kafadar team is the data controller for the app and this website.
+                    Contact:
+                    <a
+                        class="text-primary-600 hover:underline"
+                        href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a
+                    >.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    2. Data We Collect
+                </h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Account data (email, username, authentication identifiers).</li>
+                    <li>
+                        User content (created quizzes, answers, and shared results).
+                    </li>
+                    <li>
+                        Device and technical data (app version, device model, OS, error
+                        logs, and technical network signals).
+                    </li>
+                    <li>
+                        Advertising and measurement data (such as advertising identifiers,
+                        where legally permitted and consented).
+                    </li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    3. Why We Process Data
+                </h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>To provide core functionality (quiz creation and scoring).</li>
+                    <li>To secure the service and prevent abuse.</li>
+                    <li>To debug, maintain, and improve app performance.</li>
+                    <li>To comply with legal and regulatory obligations.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    4. Legal Bases
+                </h2>
+                <p>
+                    Depending on jurisdiction, we rely on contractual necessity, legitimate
+                    interests, legal obligations, and where required, consent. This policy
+                    is designed to support GDPR/UK GDPR, CCPA/CPRA, LGPD, and KVKK aligned
+                    practices.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    5. Service Providers and Sharing
+                </h2>
+                <p>
+                    We may share limited data with infrastructure and operational service
+                    providers (for example, hosting/database/authentication and ad
+                    services). We do not sell your personal information.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    6. International Transfers
+                </h2>
+                <p>
+                    Data may be processed in countries other than your own. We aim to use
+                    contractual and technical safeguards where required by law.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">7. Retention</h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                        Account data is retained while your account is active and for a
+                        limited period after deletion requests.
+                    </li>
+                    <li>
+                        Certain records may be retained longer where required by law.
+                    </li>
+                    <li>
+                        Verified deletion requests are processed as quickly as reasonably
+                        possible.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    8. Your Rights
+                </h2>
+                <p>
+                    Depending on your region, you may have rights to access, correct,
+                    delete, restrict, object, port your data, withdraw consent, and opt
+                    out of sale/share style processing. Contact:
+                    <a
+                        class="text-primary-600 hover:underline"
+                        href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a
+                    >.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    9. Children's Privacy
+                </h2>
+                <p>
+                    The service is not directed to children under 13. If you believe a
+                    child has provided personal data, contact us and we will review and act
+                    promptly.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">10. Security</h2>
+                <p>
+                    We apply reasonable technical and organizational safeguards. No method
+                    of transmission or storage is fully risk-free.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    11. Account Deletion
+                </h2>
+                <p>
+                    Use in-app deletion controls or visit
+                    <a class="text-primary-600 hover:underline" href="/en/delete-account">
+                        Delete Account
+                    </a>
+                    for a step-by-step process.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">12. Changes</h2>
+                <p>
+                    We may update this policy. Material updates are reflected with a new
+                    date on this page.
+                </p>
+            </section>
+        </article>
+    </main>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    title="Gizlilik Politikası - Kafadar"
+    description="Bu sayfa yeni adrese taşındı."
+    noindex={true}
+    canonicalPath="/gizlilik-politikasi"
+>
+    <main class="max-w-3xl mx-auto px-4 py-20 text-center">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Sayfa Taşındı</h1>
+        <p class="text-gray-600 mb-6">
+            Gizlilik politikamızın güncel adresi:
+        </p>
+        <a
+            href="/gizlilik-politikasi"
+            class="inline-flex items-center justify-center rounded-xl bg-primary-600 px-5 py-3 text-white font-semibold hover:bg-primary-700 transition-colors"
+        >
+            /gizlilik-politikasi
+        </a>
+    </main>
+    <script>
+        window.location.replace("/gizlilik-politikasi");
+    </script>
+</BaseLayout>

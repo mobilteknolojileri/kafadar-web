@@ -1,0 +1,172 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SUPPORT_EMAIL } from "../config/site";
+---
+
+<BaseLayout
+    title="Gizlilik Politikası - Kafadar"
+    description="Kafadar için global uyumluluk odaklı gizlilik politikası (GDPR, CCPA/CPRA, LGPD, KVKK)."
+>
+    <main class="max-w-4xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-gray-900 mb-2">Gizlilik Politikası</h1>
+        <p class="text-sm text-gray-500 mb-10">Son güncelleme: 17 Şubat 2026</p>
+
+        <article class="space-y-8 text-gray-700 leading-7">
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">1. Veri Sorumlusu</h2>
+                <p>
+                    Kafadar uygulaması ve bu web sitesi için veri sorumlusu Kafadar
+                    ekibidir. İletişim: <a
+                        class="text-primary-600 hover:underline"
+                        href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a
+                    >.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    2. Topladığımız Veri Türleri
+                </h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Hesap bilgileri (e-posta, kullanıcı adı, oturum kimliği).</li>
+                    <li>
+                        Kullanıcı içerikleri (oluşturulan quizler, verilen cevaplar ve
+                        paylaşılan sonuçlar).
+                    </li>
+                    <li>
+                        Cihaz/teknik veriler (uygulama sürümü, cihaz modeli, işletim
+                        sistemi, hata kayıtları, IP benzeri teknik bilgiler).
+                    </li>
+                    <li>
+                        Reklam ve ölçüm verileri (reklam kimliği gibi sinyaller;
+                        izin/consent gerektiren ülkelerde yalnızca ilgili izin
+                        mekanizmasına göre).
+                    </li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    3. Verileri İşleme Amaçları
+                </h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Hizmeti sunmak (quiz oluşturma, sonuç hesaplama, paylaşım).</li>
+                    <li>Güvenlik, hata tespiti ve kötüye kullanım önleme.</li>
+                    <li>Ürün iyileştirme, performans analizi ve destek süreçleri.</li>
+                    <li>Yasal yükümlülükleri yerine getirme.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    4. Hukuki Dayanaklar (Ülkeye Göre)
+                </h2>
+                <p>
+                    Verileri; sözleşmenin ifası, meşru menfaat, yasal yükümlülük ve
+                    gerektiğinde açık rıza dayanaklarıyla işleriz. Bu yaklaşım GDPR/UK
+                    GDPR, CCPA/CPRA, LGPD ve KVKK gibi düzenlemelerle uyumluluk hedefler.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    5. Üçüncü Taraf Hizmet Sağlayıcılar
+                </h2>
+                <p>
+                    Hizmeti çalıştırmak için sınırlı veri, altyapı sağlayıcılarıyla
+                    paylaşılabilir (ör. veritabanı/kimlik altyapısı, dağıtım altyapısı,
+                    reklam sağlayıcıları). Kişisel verilerinizi satmayız.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    6. Uluslararası Veri Aktarımları
+                </h2>
+                <p>
+                    Veriler farklı ülkelerdeki sunucularda işlenebilir. Uygulanabilir
+                    hukuk kapsamında uygun sözleşmesel ve teknik korumaları sağlamayı
+                    hedefleriz.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    7. Saklama Süresi
+                </h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                        Hesap verileri, hesap aktif olduğu sürece ve silme talebi sonrası
+                        makul bir süre boyunca tutulur.
+                    </li>
+                    <li>
+                        Yasal yükümlülükler için gereken kayıtlar ilgili mevzuat süresince
+                        saklanabilir.
+                    </li>
+                    <li>
+                        Silme talepleri, doğrulama sonrası mümkün olan en kısa sürede
+                        işlenir.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    8. Haklarınız
+                </h2>
+                <p>
+                    Ülkenize göre erişim, düzeltme, silme, kısıtlama, taşınabilirlik,
+                    itiraz, rızayı geri alma ve "satmama/paylaşmama" benzeri haklara
+                    sahip olabilirsiniz. Talep için:
+                    <a
+                        class="text-primary-600 hover:underline"
+                        href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a
+                    >.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    9. Çocukların Gizliliği
+                </h2>
+                <p>
+                    Hizmet, 13 yaş altındaki çocuklara yönelik değildir. Çocuğa ait veri
+                    işlendiğini fark ederseniz bize ulaşın; doğrulama sonrası gerekli
+                    işlemleri yaparız.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">10. Güvenlik</h2>
+                <p>
+                    Verileri korumak için uygun teknik ve organizasyonel önlemler
+                    uygularız. Buna rağmen internet üzerinden iletim veya depolama hiçbir
+                    zaman mutlak olarak risksiz değildir.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    11. Hesap Silme
+                </h2>
+                <p>
+                    Uygulama içindeki hesap silme adımını kullanabilir veya
+                    <a class="text-primary-600 hover:underline" href="/hesap-silme">
+                        Hesap Silme
+                    </a>
+                    sayfasını ziyaret edebilirsiniz.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-2xl font-semibold text-gray-900">
+                    12. Politika Değişiklikleri
+                </h2>
+                <p>
+                    Bu politikayı güncelleyebiliriz. Önemli değişikliklerde yeni tarih bu
+                    sayfada yayınlanır.
+                </p>
+            </section>
+        </article>
+    </main>
+</BaseLayout>
