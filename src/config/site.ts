@@ -31,8 +31,7 @@ export const DEEP_LINK_PREFIX =
   import.meta.env.PUBLIC_DEEP_LINK_PREFIX ?? `${SITE_URL}/q/`;
 
 export const LEGACY_DEEP_LINK_PREFIX =
-  import.meta.env.PUBLIC_LEGACY_DEEP_LINK_PREFIX ??
-  "https://goldsword.dev/kafadar/q/";
+  import.meta.env.PUBLIC_LEGACY_DEEP_LINK_PREFIX ?? `${SITE_URL}/quiz/`;
 
 export const IOS_BUNDLE_ID =
   import.meta.env.PUBLIC_IOS_BUNDLE_ID ?? "com.schwerttr.kafadar";
