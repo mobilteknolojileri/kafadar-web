@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, getTranslations } from "../i18n/utils";
 import {
     APP_STORE_URL,
     DEEP_LINK_PREFIX,
@@ -10,7 +10,7 @@ import {
 } from "../config/site";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const t = getTranslations(lang);
 
 const features = [
     {
