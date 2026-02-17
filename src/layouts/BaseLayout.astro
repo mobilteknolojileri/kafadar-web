@@ -1,0 +1,133 @@
+---
+import "../styles/globals.css";
+import { getLangFromUrl } from "../i18n/utils";
+import { SITE_URL } from "../config/site";
+
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+    noindex?: boolean;
+    canonicalPath?: string;
+    keywords?: string[];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const {
+    title,
+    description = "Kafadar - Arkadaşlık Testi",
+    image = "/logo.png",
+    noindex = false,
+    canonicalPath,
+    keywords = [],
+} = Astro.props;
+
+const canonical = new URL(canonicalPath ?? Astro.url.pathname, `${SITE_URL}/`);
+const imageUrl = new URL(image, `${SITE_URL}/`);
+
+const alternateRoutes: Record<string, { tr: string; en: string }> = {
+    "/": { tr: "/", en: "/en" },
+    "/en": { tr: "/", en: "/en" },
+    "/gizlilik-politikasi": {
+        tr: "/gizlilik-politikasi",
+        en: "/en/privacy-policy",
+    },
+    "/en/privacy-policy": {
+        tr: "/gizlilik-politikasi",
+        en: "/en/privacy-policy",
+    },
+    "/kullanim-kosullari": {
+        tr: "/kullanim-kosullari",
+        en: "/en/terms-of-service",
+    },
+    "/en/terms-of-service": {
+        tr: "/kullanim-kosullari",
+        en: "/en/terms-of-service",
+    },
+    "/hesap-silme": { tr: "/hesap-silme", en: "/en/delete-account" },
+    "/en/delete-account": { tr: "/hesap-silme", en: "/en/delete-account" },
+    "/deeplink": { tr: "/deeplink", en: "/en/deeplink" },
+    "/en/deeplink": { tr: "/deeplink", en: "/en/deeplink" },
+    "/reset-password": { tr: "/reset-password", en: "/en/reset-password" },
+    "/en/reset-password": { tr: "/reset-password", en: "/en/reset-password" },
+};
+
+const alternates = alternateRoutes[canonical.pathname];
+const robots = noindex
+    ? "noindex, nofollow"
+    : "index, follow, max-image-preview:large";
+const keywordsContent = keywords.join(", ");
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        {keywordsContent && <meta name="keywords" content={keywordsContent} />}
+        <meta name="viewport" content="width=device-width" />
+        <meta name="robots" content={robots} />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta name="theme-color" content="#4f46e5" />
+        <meta property="og:site_name" content="Kafadar" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical.toString()} />
+        <meta property="og:image" content={imageUrl.toString()} />
+        <meta property="og:locale" content={lang === "en" ? "en_US" : "tr_TR"} />
+        <meta
+            property="og:locale:alternate"
+            content={lang === "en" ? "tr_TR" : "en_US"}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imageUrl.toString()} />
+        <link rel="canonical" href={canonical.toString()} />
+        {
+            alternates && (
+                <>
+                    <link
+                        rel="alternate"
+                        hreflang="tr"
+                        href={new URL(alternates.tr, `${SITE_URL}/`).toString()}
+                    />
+                    <link
+                        rel="alternate"
+                        hreflang="en"
+                        href={new URL(alternates.en, `${SITE_URL}/`).toString()}
+                    />
+                    <link
+                        rel="alternate"
+                        hreflang="x-default"
+                        href={new URL("/", `${SITE_URL}/`).toString()}
+                    />
+                </>
+            )
+        }
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="font-outfit">
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --font-outfit: "Outfit", sans-serif;
+    }
+
+    .font-outfit {
+        font-family: var(--font-outfit);
+    }
+</style>

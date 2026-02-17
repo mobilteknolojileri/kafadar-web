@@ -1,0 +1,274 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import {
+    APP_STORE_URL,
+    DEEP_LINK_PREFIX,
+    GOOGLE_PLAY_URL,
+    LEGACY_DEEP_LINK_PREFIX,
+    SITE_URL,
+    SUPPORT_EMAIL,
+} from "../config/site";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const features = [
+    {
+        title: t("features.1.title"),
+        description: t("features.1.desc"),
+        icon: "⚡",
+    },
+    {
+        title: t("features.2.title"),
+        description: t("features.2.desc"),
+        icon: "😎",
+    },
+    {
+        title: t("features.3.title"),
+        description: t("features.3.desc"),
+        icon: "🏆",
+    },
+];
+
+const techHighlights = [
+    "React Native + Expo SDK 54",
+    "Supabase Realtime",
+    `Universal Deep Links (${DEEP_LINK_PREFIX}{quizId})`,
+    `Legacy Path Support (${LEGACY_DEEP_LINK_PREFIX}{quizId})`,
+    "Global legal pages (GDPR / CCPA / KVKK ready)",
+];
+
+const privacyLink = lang === "en" ? "/en/privacy-policy" : "/gizlilik-politikasi";
+const termsLink =
+    lang === "en" ? "/en/terms-of-service" : "/kullanim-kosullari";
+const deepLinkGuide = lang === "en" ? "/en/deeplink" : "/deeplink";
+const contactLink = `mailto:${SUPPORT_EMAIL}`;
+
+const isEnglish = lang === "en";
+const iosLabel = isEnglish ? "Download on the App Store" : "App Store'dan İndir";
+const androidLabel = isEnglish
+    ? "Get it on Google Play"
+    : "Google Play'den İndir";
+const deepLinkText = isEnglish
+    ? "Deep-link test and fallback page"
+    : "Deep link test ve fallback sayfası";
+
+const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Kafadar",
+    applicationCategory: "GameApplication",
+    operatingSystem: "iOS, Android",
+    url: SITE_URL,
+    offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+    },
+};
+---
+
+<div class="bg-white dark:bg-dark-900 min-h-screen">
+    <nav class="absolute w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img
+                    src="/logo.png"
+                    alt="Kafadar Logo"
+                    class="w-10 h-10 rounded-xl shadow-lg"
+                />
+                <span class="text-xl font-bold text-gray-900 dark:text-white"
+                    >Kafadar</span
+                >
+            </div>
+            <div class="flex items-center gap-4">
+                <a
+                    href={isEnglish ? "/" : "/en"}
+                    class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 transition-colors"
+                >
+                    {isEnglish ? "TR" : "EN"}
+                </a>
+                <a
+                    href="#indir"
+                    class="bg-primary-600 text-white px-5 py-2.5 rounded-xl font-bold hover:bg-primary-700 transition-colors shadow-lg shadow-primary-500/30"
+                    >{t("nav.download")}</a
+                >
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-primary-50 to-white dark:from-dark-900 dark:to-dark-950 -z-10"
+        >
+        </div>
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block mb-12 relative animate-bounce-slow">
+                <div
+                    class="absolute inset-0 bg-primary-500 blur-3xl opacity-20 rounded-full"
+                >
+                </div>
+                <img
+                    src="/logo.png"
+                    alt="Kafadar Logo"
+                    class="relative w-32 h-32 md:w-40 md:h-40 rounded-[2.5rem] shadow-2xl border-4 border-white dark:border-dark-800 rotate-3"
+                />
+            </div>
+
+            <h1
+                class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight"
+            >
+                {t("hero.title")}
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600"
+                    >{t("hero.subtitle")}</span
+                >
+            </h1>
+            <p
+                class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed"
+            >
+                {t("hero.description")}
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row justify-center gap-4 mb-6"
+                id="indir"
+            >
+                <a
+                    href={APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-8 py-4 bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-xl flex items-center justify-center gap-3"
+                >
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"
+                        ><path
+                            d="M17.523 15.3414C17.523 15.3414 17.564 15.3954 17.593 15.4414C18.693 17.0374 18.067 18.9174 18.067 18.9174C17.528 19.6674 16.947 19.9674 16.386 19.9824C15.289 20.0124 14.897 19.3414 14.897 19.3414C14.075 18.7124 12.919 18.7274 12.112 19.3414C12.112 19.3414 11.666 20.0574 10.598 20.0124C10.038 19.9824 9.42703 19.6224 8.89803 18.8874C8.89803 18.8874 7.64103 17.0974 8.79003 15.3414C8.79003 15.3414 9.53003 14.2314 11.234 14.2314C12.003 14.2314 12.753 14.7314 13.203 14.7314C13.653 14.7314 14.453 14.0814 15.553 14.1314C16.938 14.1874 17.523 15.3414 17.523 15.3414ZM15.353 12.6414C15.353 12.6414 15.559 11.5914 14.948 10.7914C14.398 10.0914 13.448 9.94138 13.448 9.94138C13.448 9.94138 13.148 11.0914 13.848 11.9414C14.381 12.5934 15.353 12.6414 15.353 12.6414Z"
+                        ></path></svg
+                    >
+                    {iosLabel}
+                </a>
+                <a
+                    href={GOOGLE_PLAY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-8 py-4 bg-primary-600 text-white rounded-2xl font-bold text-lg hover:bg-primary-700 hover:scale-105 transition-all shadow-xl shadow-primary-500/30 flex items-center justify-center gap-3"
+                >
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"
+                        ><path
+                            d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L3.84,2.15C3.84,2.15 6.05,2.66 6.05,2.66Z"
+                        ></path></svg
+                    >
+                    {androidLabel}
+                </a>
+            </div>
+
+            <p class="text-sm text-gray-500 mb-10">
+                {deepLinkText}:
+                <a
+                    href={deepLinkGuide}
+                    class="text-primary-600 font-semibold hover:underline"
+                    >{deepLinkGuide}</a
+                >
+            </p>
+
+            <div class="relative max-w-sm mx-auto">
+                <div
+                    class="absolute -inset-4 bg-gradient-to-tr from-primary-500 to-indigo-500 opacity-20 blur-2xl rounded-full"
+                >
+                </div>
+                <div
+                    class="relative rounded-[2.5rem] shadow-2xl border-8 border-gray-900 dark:border-gray-800 bg-gradient-to-b from-primary-100 to-white p-8 text-left"
+                >
+                    <img
+                        src="/logo.png"
+                        alt="Kafadar App Icon"
+                        class="w-16 h-16 rounded-2xl mb-4"
+                    />
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Kafadar App</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        {isEnglish
+                            ? "Create your own friendship quiz, share it instantly and see who knows you best."
+                            : "Arkadaşlık quizini oluştur, anında paylaş ve seni en iyi kimin tanıdığını gör."}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-50 dark:bg-dark-950">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2
+                class="text-3xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-16"
+            >
+                {t("features.title")}
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                {
+                    features.map((feature) => (
+                        <div class="bg-white dark:bg-dark-800 p-8 rounded-[2rem] shadow-lg border border-gray-100 dark:border-dark-700 hover:-translate-y-2 transition-transform duration-300">
+                            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center text-4xl mb-6">
+                                {feature.icon}
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                                {feature.title}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                {feature.description}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 overflow-hidden">
+        <div
+            class="max-w-4xl mx-auto bg-gray-900 dark:bg-primary-900/10 rounded-[3rem] p-12 md:p-16 text-center relative"
+        >
+            <h2
+                class="text-3xl md:text-5xl font-bold text-white mb-10 relative z-10"
+            >
+                {t("tech.title")}
+            </h2>
+            <div
+                class="grid md:grid-cols-1 gap-4 max-w-xl mx-auto relative z-10"
+            >
+                {
+                    techHighlights.map((feature) => (
+                        <div class="flex items-center gap-4 text-left p-5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/20 transition-colors">
+                            <span class="text-primary-400 font-bold text-xl">✓</span>
+                            <span class="text-white font-medium text-lg">
+                                {feature}
+                            </span>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <footer
+        class="py-12 text-center text-gray-400 border-t border-gray-100 dark:border-dark-800"
+    >
+        <p class="mb-4">{t("footer.rights")}</p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href={privacyLink} class="hover:text-primary-600 transition-colors"
+                >{t("nav.privacy")}</a
+            >
+            <a href={termsLink} class="hover:text-primary-600 transition-colors"
+                >{t("nav.terms")}</a
+            >
+            <a href={contactLink} class="hover:text-primary-600 transition-colors"
+                >{t("nav.contact")}</a
+            >
+        </div>
+    </footer>
+</div>
+
+<script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(softwareSchema)}
+></script>
