@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kafadar.app/sitemap-index.xml
