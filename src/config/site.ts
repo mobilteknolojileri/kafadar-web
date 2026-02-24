@@ -12,7 +12,7 @@ export const ANDROID_PACKAGE =
 
 export const GOOGLE_PLAY_URL =
   import.meta.env.PUBLIC_GOOGLE_PLAY_URL ??
-  "https://example.com/mock-google-play-link";
+  "https://play.google.com/store/apps/details?id=com.schwerttr.kafadar";
 
 export const APP_STORE_URL =
   import.meta.env.PUBLIC_APP_STORE_URL ??
