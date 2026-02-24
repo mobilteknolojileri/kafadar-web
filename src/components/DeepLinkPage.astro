@@ -58,7 +58,7 @@ const ui = {
             </a>
             <a
                 href="javascript:void(0);"
-                class="h-[3.6rem] hover:-translate-y-1 transition-transform"
+                class="h-10 opacity-60 grayscale cursor-not-allowed hover:opacity-80 transition-opacity"
                 onclick="alert(this.dataset.msg);"
                 data-msg={isEnglish
                     ? "Coming soon to App Store!"
@@ -76,7 +76,7 @@ const ui = {
                 href={GOOGLE_PLAY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="h-16 hover:-translate-y-1 transition-transform"
+                class="h-[4.5rem] md:h-20 hover:-translate-y-1 transition-transform"
             >
                 <img
                     src={isEnglish
