@@ -38,14 +38,17 @@ const techHighlights = [
     "Global legal pages (GDPR / CCPA / KVKK ready)",
 ];
 
-const privacyLink = lang === "en" ? "/en/privacy-policy" : "/gizlilik-politikasi";
+const privacyLink =
+    lang === "en" ? "/en/privacy-policy" : "/gizlilik-politikasi";
 const termsLink =
     lang === "en" ? "/en/terms-of-service" : "/kullanim-kosullari";
 const deepLinkGuide = lang === "en" ? "/en/deeplink" : "/deeplink";
 const contactLink = `mailto:${SUPPORT_EMAIL}`;
 
 const isEnglish = lang === "en";
-const iosLabel = isEnglish ? "Download on the App Store" : "App Store'dan İndir";
+const iosLabel = isEnglish
+    ? "Download on the App Store"
+    : "App Store'dan İndir";
 const androidLabel = isEnglish
     ? "Get it on Google Play"
     : "Google Play'den İndir";
@@ -116,7 +119,7 @@ const softwareSchema = {
             </div>
 
             <h1
-                class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight"
+                class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-4 sm:mb-6 tracking-tight leading-tight"
             >
                 {t("hero.title")}
                 <span
@@ -125,20 +128,20 @@ const softwareSchema = {
                 >
             </h1>
             <p
-                class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed"
+                class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2"
             >
                 {t("hero.description")}
             </p>
 
             <div
-                class="flex flex-col sm:flex-row justify-center gap-4 mb-6"
+                class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-8 sm:mb-10 w-full px-4 sm:px-0"
                 id="indir"
             >
                 <a
                     href={APP_STORE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="px-8 py-4 bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-xl flex items-center justify-center gap-3"
+                    class="w-full sm:w-auto px-6 sm:px-8 py-4 bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-2xl font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-xl flex items-center justify-center gap-3"
                 >
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"
                         ><path
@@ -151,7 +154,7 @@ const softwareSchema = {
                     href={GOOGLE_PLAY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="px-8 py-4 bg-primary-600 text-white rounded-2xl font-bold text-lg hover:bg-primary-700 hover:scale-105 transition-all shadow-xl shadow-primary-500/30 flex items-center justify-center gap-3"
+                    class="w-full sm:w-auto px-6 sm:px-8 py-4 bg-primary-600 text-white rounded-2xl font-bold text-base sm:text-lg hover:bg-primary-700 hover:scale-105 transition-all shadow-xl shadow-primary-500/30 flex items-center justify-center gap-3"
                 >
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"
                         ><path
@@ -162,7 +165,7 @@ const softwareSchema = {
                 </a>
             </div>
 
-            <p class="text-sm text-gray-500 mb-10">
+            <p class="text-xs sm:text-sm text-gray-500 mb-8 sm:mb-10 px-4">
                 {deepLinkText}:
                 <a
                     href={deepLinkGuide}
@@ -171,31 +174,35 @@ const softwareSchema = {
                 >
             </p>
 
-            <div class="relative max-w-sm mx-auto">
+            <div class="relative max-w-sm mx-auto w-full px-4 sm:px-0">
                 <div
                     class="absolute -inset-4 bg-gradient-to-tr from-primary-500 to-indigo-500 opacity-20 blur-2xl rounded-full"
                 >
                 </div>
                 <div
-                    class="relative rounded-[2.5rem] shadow-2xl border-8 border-gray-900 dark:border-gray-800 bg-gradient-to-b from-primary-100 to-white p-8 text-left"
+                    class="relative rounded-3xl sm:rounded-[2.5rem] shadow-2xl border-4 sm:border-8 border-gray-900 dark:border-gray-800 bg-gradient-to-b from-primary-100 to-white p-6 sm:p-8 text-left"
                 >
                     <img
                         src="/logo.png"
                         alt="Kafadar App Icon"
                         class="w-16 h-16 rounded-2xl mb-4"
                     />
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Kafadar App</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">
+                        Kafadar App
+                    </h3>
                     <p class="text-gray-700 text-sm leading-relaxed">
-                        {isEnglish
-                            ? "Create your own friendship quiz, share it instantly and see who knows you best."
-                            : "Arkadaşlık quizini oluştur, anında paylaş ve seni en iyi kimin tanıdığını gör."}
+                        {
+                            isEnglish
+                                ? "Create your own friendship quiz, share it instantly and see who knows you best."
+                                : "Arkadaşlık quizini oluştur, anında paylaş ve seni en iyi kimin tanıdığını gör."
+                        }
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-gray-50 dark:bg-dark-950">
+    <section class="py-16 md:py-24 bg-gray-50 dark:bg-dark-950">
         <div class="max-w-6xl mx-auto px-4">
             <h2
                 class="text-3xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-16"
@@ -206,7 +213,7 @@ const softwareSchema = {
             <div class="grid md:grid-cols-3 gap-8">
                 {
                     features.map((feature) => (
-                        <div class="bg-white dark:bg-dark-800 p-8 rounded-[2rem] shadow-lg border border-gray-100 dark:border-dark-700 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-white dark:bg-dark-800 p-6 sm:p-8 rounded-3xl sm:rounded-[2rem] shadow-lg border border-gray-100 dark:border-dark-700 hover:-translate-y-2 transition-transform duration-300">
                             <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center text-4xl mb-6">
                                 {feature.icon}
                             </div>
@@ -223,12 +230,12 @@ const softwareSchema = {
         </div>
     </section>
 
-    <section class="py-24 px-4 overflow-hidden">
+    <section class="py-16 md:py-24 px-4 overflow-hidden">
         <div
-            class="max-w-4xl mx-auto bg-gray-900 dark:bg-primary-900/10 rounded-[3rem] p-12 md:p-16 text-center relative"
+            class="max-w-4xl mx-auto bg-gray-900 dark:bg-primary-900/10 rounded-[2rem] md:rounded-[3rem] p-8 sm:p-12 md:p-16 text-center relative"
         >
             <h2
-                class="text-3xl md:text-5xl font-bold text-white mb-10 relative z-10"
+                class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-8 md:mb-10 relative z-10"
             >
                 {t("tech.title")}
             </h2>
@@ -238,8 +245,10 @@ const softwareSchema = {
                 {
                     techHighlights.map((feature) => (
                         <div class="flex items-center gap-4 text-left p-5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/20 transition-colors">
-                            <span class="text-primary-400 font-bold text-xl">✓</span>
-                            <span class="text-white font-medium text-lg">
+                            <span class="text-primary-400 font-bold text-xl">
+                                ✓
+                            </span>
+                            <span class="text-white font-medium text-base sm:text-lg">
                                 {feature}
                             </span>
                         </div>
@@ -254,13 +263,17 @@ const softwareSchema = {
     >
         <p class="mb-4">{t("footer.rights")}</p>
         <div class="flex flex-wrap justify-center gap-6">
-            <a href={privacyLink} class="hover:text-primary-600 transition-colors"
+            <a
+                href={privacyLink}
+                class="hover:text-primary-600 transition-colors"
                 >{t("nav.privacy")}</a
             >
             <a href={termsLink} class="hover:text-primary-600 transition-colors"
                 >{t("nav.terms")}</a
             >
-            <a href={contactLink} class="hover:text-primary-600 transition-colors"
+            <a
+                href={contactLink}
+                class="hover:text-primary-600 transition-colors"
                 >{t("nav.contact")}</a
             >
         </div>
@@ -271,4 +284,4 @@ const softwareSchema = {
     is:inline
     type="application/ld+json"
     set:html={JSON.stringify(softwareSchema)}
-></script>
+/>
