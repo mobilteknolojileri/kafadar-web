@@ -1,11 +1,5 @@
 ---
-import {
-    APP_SCHEME_QUIZ_PREFIX,
-    APP_STORE_URL,
-    DEEP_LINK_PREFIX,
-    GOOGLE_PLAY_URL,
-    LEGACY_DEEP_LINK_PREFIX,
-} from "../config/site";
+import { APP_SCHEME_QUIZ_PREFIX, GOOGLE_PLAY_URL } from "../config/site";
 
 interface Props {
     lang: "tr" | "en";
@@ -28,7 +22,6 @@ const ui = {
     statusFallback: isEnglish
         ? "If nothing happened, install the app from the store buttons."
         : "Herhangi bir şey olmadıysa mağaza butonlarını kullanarak uygulamayı yükleyin.",
-    deepLinkLabel: isEnglish ? "Supported deep-link formats:" : "Desteklenen deep-link formatları:",
 };
 ---
 
@@ -37,45 +30,62 @@ const ui = {
         class="w-full max-w-2xl bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10"
     >
         <div class="flex items-center gap-3 mb-6">
-            <img src="/logo.png" alt="Kafadar Logo" class="w-12 h-12 rounded-xl" />
-            <h1 class="text-2xl md:text-3xl font-bold text-gray-900">{ui.title}</h1>
+            <img
+                src="/logo.png"
+                alt="Kafadar Logo"
+                class="w-12 h-12 rounded-xl"
+            />
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900">
+                {ui.title}
+            </h1>
         </div>
 
         <p class="text-gray-600 mb-6">{ui.description}</p>
-        <p id="deeplink-status" class="text-sm text-primary-700 font-medium mb-6">
+        <p
+            id="deeplink-status"
+            class="text-sm text-primary-700 font-medium mb-6"
+        >
             {ui.statusWaiting}
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-3 mb-8">
+        <div class="flex flex-col sm:flex-row gap-4 items-center mb-8">
             <a
                 id="open-app-link"
                 href={APP_SCHEME_QUIZ_PREFIX}
-                class="inline-flex items-center justify-center rounded-xl bg-primary-600 px-5 py-3 text-white font-semibold hover:bg-primary-700 transition-colors"
+                class="w-full sm:w-auto h-[3.6rem] inline-flex items-center justify-center rounded-xl bg-primary-600 px-8 text-white font-bold text-lg hover:bg-primary-700 hover:-translate-y-1 transition-all shadow-lg shadow-primary-500/30"
             >
                 {ui.openApp}
             </a>
             <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center rounded-xl border border-gray-300 px-5 py-3 font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+                href="javascript:void(0);"
+                class="h-[3.6rem] hover:-translate-y-1 transition-transform"
+                onclick="alert(this.dataset.msg);"
+                data-msg={isEnglish
+                    ? "Coming soon to App Store!"
+                    : "Çok yakında App Store'da!"}
             >
-                {ui.appStore}
+                <img
+                    src={isEnglish
+                        ? "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                        : "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/tr-tr?size=250x83&releaseDate=1276560000&h=c3623512b9dcd8d9e6eb1b162f4ba6e9"}
+                    alt="Download on the App Store"
+                    class="h-full object-contain"
+                />
             </a>
             <a
                 href={GOOGLE_PLAY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center rounded-xl border border-gray-300 px-5 py-3 font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+                class="h-16 hover:-translate-y-1 transition-transform"
             >
-                {ui.playStore}
+                <img
+                    src={isEnglish
+                        ? "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                        : "https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png"}
+                    alt="Get it on Google Play"
+                    class="h-full object-contain"
+                />
             </a>
-        </div>
-
-        <div class="rounded-2xl bg-gray-900 text-gray-100 p-5 text-sm space-y-2">
-            <p class="font-semibold">{ui.deepLinkLabel}</p>
-            <p>{DEEP_LINK_PREFIX}{"{quizId}"}</p>
-            <p>{LEGACY_DEEP_LINK_PREFIX}{"{quizId}"}</p>
         </div>
     </div>
 </section>
