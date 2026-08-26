@@ -38,6 +38,11 @@ const shouldIncludeInSitemap = (page) => {
 // https://astro.build/config
 export default defineConfig({
   site: "https://kafadar-web.vercel.app",
+  build: {
+    // Tek stil sayfasi 5 KiB; ayri istek olarak cekmek render-blocking
+    // oluyordu. Inline etmek o istegi kritik yoldan tamamen kaldiriyor.
+    inlineStylesheets: "always",
+  },
   integrations: [
     react(),
     tailwind({

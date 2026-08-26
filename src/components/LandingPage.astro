@@ -131,7 +131,7 @@ const softwareSchema = {
             >
                 <button
                     type="button"
-                    class="h-10 sm:h-12 opacity-60 grayscale cursor-not-allowed hover:opacity-80 transition-opacity"
+                    class="inline-flex items-center h-10 sm:h-12 opacity-60 grayscale cursor-not-allowed hover:opacity-80 transition-opacity"
                     onclick="alert(this.dataset.msg);"
                     data-msg={isEnglish
                         ? "Coming soon to App Store!"
@@ -139,28 +139,28 @@ const softwareSchema = {
                 >
                     <img
                         src={isEnglish
-                            ? "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
-                            : "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/tr-tr?size=250x83&releaseDate=1276560000&h=c3623512b9dcd8d9e6eb1b162f4ba6e9"}
+                            ? "/badge-appstore-en.svg"
+                            : "/badge-appstore-tr.svg"}
                         alt="Download on the App Store"
-                        width="250"
-                        height="83"
-                        class="h-full object-contain"
+                        width={isEnglish ? 120 : 151}
+                        height="40"
+                        class="h-full w-auto"
                     />
                 </button>
                 <a
                     href={GOOGLE_PLAY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="h-[4.8rem] sm:h-[5.5rem] hover:scale-105 transition-transform"
+                    class="inline-flex items-center h-10 sm:h-12 hover:scale-105 transition-transform"
                 >
                     <img
                         src={isEnglish
-                            ? "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                            : "https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png"}
+                            ? "/badge-play-en.webp"
+                            : "/badge-play-tr.webp"}
                         alt="Get it on Google Play"
-                        width="646"
-                        height="250"
-                        class="h-full object-contain"
+                        width={isEnglish ? 483 : 485}
+                        height="144"
+                        class="h-full w-auto"
                     />
                 </a>
             </div>
