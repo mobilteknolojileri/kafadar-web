@@ -16,7 +16,7 @@ const lang = getLangFromUrl(Astro.url);
 const {
     title,
     description = "Kafadar - Arkadaşlık Testi",
-    image = "/logo.png",
+    image = "/og.png",
     noindex = false,
     canonicalPath,
     keywords = [],
@@ -107,13 +107,18 @@ const keywordsContent = keywords.join(", ");
             )
         }
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="icon" type="image/png" href="/logo.png" />
+        <link rel="icon" type="image/png" href="/icon-64.png" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://play.google.com" />
         <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+            rel="preconnect"
+            href="https://tools.applemediaservices.com"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
             rel="stylesheet"
         />
     </head>
