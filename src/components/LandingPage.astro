@@ -129,8 +129,8 @@ const softwareSchema = {
                 class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-8 sm:mb-10 w-full px-4 sm:px-0"
                 id="indir"
             >
-                <a
-                    href="javascript:void(0);"
+                <button
+                    type="button"
                     class="h-10 sm:h-12 opacity-60 grayscale cursor-not-allowed hover:opacity-80 transition-opacity"
                     onclick="alert(this.dataset.msg);"
                     data-msg={isEnglish
@@ -142,9 +142,11 @@ const softwareSchema = {
                             ? "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
                             : "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/tr-tr?size=250x83&releaseDate=1276560000&h=c3623512b9dcd8d9e6eb1b162f4ba6e9"}
                         alt="Download on the App Store"
+                        width="250"
+                        height="83"
                         class="h-full object-contain"
                     />
-                </a>
+                </button>
                 <a
                     href={GOOGLE_PLAY_URL}
                     target="_blank"
@@ -156,6 +158,8 @@ const softwareSchema = {
                             ? "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                             : "https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png"}
                         alt="Get it on Google Play"
+                        width="646"
+                        height="250"
                         class="h-full object-contain"
                     />
                 </a>
@@ -177,9 +181,9 @@ const softwareSchema = {
                         loading="lazy"
                         class="w-16 h-16 rounded-2xl mb-4"
                     />
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">
+                    <p class="text-xl font-bold text-gray-900 mb-2">
                         Kafadar App
-                    </h3>
+                    </p>
                     <p class="text-gray-700 text-sm leading-relaxed">
                         {
                             isEnglish
@@ -249,7 +253,7 @@ const softwareSchema = {
     </section>
 
     <footer
-        class="py-12 text-center text-gray-400 border-t border-gray-100 dark:border-dark-800"
+        class="py-12 text-center text-gray-600 dark:text-gray-400 border-t border-gray-100 dark:border-dark-800"
     >
         <p class="mb-4">{t("footer.rights")}</p>
         <div class="flex flex-wrap justify-center gap-6">
